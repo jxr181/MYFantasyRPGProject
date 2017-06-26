@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (distanceToPlayer <= attackRadius && !isAttacking)
         {
             isAttacking = true;
-            InvokeRepeating("SpawnProjectile", 0f, secondsBetweenShots);  // TODO Switch to Coroutines
+            InvokeRepeating("FireProjectile", 0f, secondsBetweenShots);  // TODO Switch to Coroutines
         }
 
         if (distanceToPlayer > attackRadius && isAttacking)
@@ -76,14 +76,16 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    void SpawnProjectile()
+    // TODO Seperate out character firing logic
+    void FireProjectile()
     {
         GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity); // Spawns project at the projectile socket 
         Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
         projectileComponent.SetDamage(damagePerShot);
+        projectileComponent.SetShooter(gameObject);
 
         Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized; // shoots projectile in direction of the player from the projectileSocket
-        float projectileSpeed = projectileComponent.projectileSpeed;
+        float projectileSpeed = projectileComponent.GetDefaultLaunchSpeed();
         newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
     }
 

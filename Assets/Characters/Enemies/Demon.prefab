@@ -2232,7 +2232,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117172920356884}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   maxHealthPoints: 750
   damagePerShot: 100
   secondsBetweenShots: 2
-  attackRadius: 7.02
+  attackRadius: 3.54
   chaseRadius: 10.02
   stopChaseRadius: 15
   aimOffset: {x: 0, y: 1, z: 0}

@@ -2070,7 +2070,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621238549789276}
   m_LocalRotation: {x: -0, y: -0.85096616, z: -0, w: 0.5252207}
-  m_LocalPosition: {x: -69.1, y: 0, z: -190.4}
+  m_LocalPosition: {x: -91.64, y: 0, z: -209.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4815033974277694}
@@ -2572,7 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373bcb2676cf3e743995a4b14e94eee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileToUse: {fileID: 1394493254963808, guid: 3c98d3da459a60d4e8f23bead0596890,
+  projectileToUse: {fileID: 1394493254963808, guid: 562043133e2acbf4996457223fd9af4e,
     type: 2}
   projectileSocket: {fileID: 1472886676332722}
   maxHealthPoints: 250

@@ -2062,8 +2062,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309191441018978}
-  m_LocalRotation: {x: -0, y: 0.9588231, z: -0, w: -0.28400412}
-  m_LocalPosition: {x: -96.96954, y: 0, z: -189.97551}
+  m_LocalRotation: {x: -0, y: 0.9059601, z: -0, w: -0.42336333}
+  m_LocalPosition: {x: -95.57, y: 0, z: -210.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4201636453615264}
@@ -2072,7 +2072,7 @@ Transform:
   - {fileID: 4384453569026260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 212.999, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 230.094, z: 0}
 --- !u!4 &4622204690484966
 Transform:
   m_ObjectHideFlags: 1
@@ -2774,7 +2774,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5.5
+  m_Speed: 5
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120

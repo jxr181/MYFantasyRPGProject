@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 195884983674855392}
   - component: {fileID: 114958761581294180}
   - component: {fileID: 114214981238215530}
-  - component: {fileID: 114594593819975770}
   m_Layer: 9
   m_Name: Healer
   m_TagString: Untagged
@@ -1806,7 +1805,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503015591118030}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2571,26 +2570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &114594593819975770
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1261348249886088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6c45eec84d38438f0ee2657e94ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileToUse: {fileID: 0}
-  projectileSocket: {fileID: 0}
-  maxHealthPoints: 100
-  damagePerShot: 9
-  secondsBetweenShots: 0
-  attackRadius: 0
-  chaseRadius: 0
-  stopChaseRadius: 0
-  aimOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &114958761581294180
 MonoBehaviour:
   m_ObjectHideFlags: 1

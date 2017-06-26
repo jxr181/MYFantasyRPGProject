@@ -83,8 +83,6 @@ public class Summoner : MonoBehaviour, IDamageable
         projectileComponent.SetDamage(damagePerShot);
 
         Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized; // shoots projectile in direction of the player from the projectileSocket
-        float projectileSpeed = projectileComponent.projectileSpeed;
-        newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
     }
 
     private void OnDrawGizmos()
