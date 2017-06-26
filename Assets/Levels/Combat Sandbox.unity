@@ -394,17 +394,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114638551488184072, guid: f0aa8fb93f2953a4886603dd973e6337,
-        type: 2}
-      propertyPath: weaponSocket
-      value: 
-      objectReference: {fileID: 1198316013}
-    - target: {fileID: 114638551488184072, guid: f0aa8fb93f2953a4886603dd973e6337,
-        type: 2}
-      propertyPath: weaponInUse
-      value: 
-      objectReference: {fileID: 11400000, guid: 2450805f61a04f542b74e448f4f8e684,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0aa8fb93f2953a4886603dd973e6337, type: 2}
   m_IsPrefabParent: 0
@@ -669,11 +658,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3132fb91b7fb74f40b45b3735cf5e75b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1198316013 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1734777673852148, guid: f0aa8fb93f2953a4886603dd973e6337,
-    type: 2}
-  m_PrefabInternal: {fileID: 533785216}
 --- !u!1001 &1240776774
 Prefab:
   m_ObjectHideFlags: 0

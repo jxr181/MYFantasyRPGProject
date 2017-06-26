@@ -253,6 +253,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4133778963868500}
+  - component: {fileID: 114811919907186332}
   m_Layer: 0
   m_Name: Hand_R
   m_TagString: Untagged
@@ -699,7 +700,7 @@ MonoBehaviour:
   damagePerHit: 50
   minTimeBetweenHits: 1
   weaponSocket: {fileID: 1734777673852148}
-  weaponInUse: {fileID: 11400000, guid: 9d3203f843db8124b934314fb68efaf7, type: 2}
+  weaponInUse: {fileID: 11400000, guid: 2450805f61a04f542b74e448f4f8e684, type: 2}
   maxAttackRange: 2
   currentHealthPoints: 0
 --- !u!114 &114793335721260212
@@ -721,6 +722,17 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!114 &114811919907186332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1734777673852148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c225990f36f164680ec15fb5cfdc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136071836023684460
 CapsuleCollider:
   m_ObjectHideFlags: 1
