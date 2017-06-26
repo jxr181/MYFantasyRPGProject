@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -9,8 +10,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] int enemyLayer = 9;
     [SerializeField] float damagePerHit = 10f;
     [SerializeField] float minTimeBetweenHits = 0.5f;
-
-    [SerializeField] GameObject weaponSocket;
+    
     [SerializeField] Weapon weaponInUse;
     [SerializeField] float maxAttackRange = 2f;
 
@@ -36,20 +36,31 @@ public class Player : MonoBehaviour, IDamageable
         PutWeaponInHand();
     }
 
-    private void PutWeaponInHand()
+    void PutWeaponInHand()
     {
         var weaponPrefab = weaponInUse.GetWeaponPrefab();
-        var weapon = Instantiate(weaponPrefab, weaponSocket.transform);
+        GameObject dominantHand = RequestDominantHand();
+        var weapon = Instantiate(weaponPrefab, dominantHand.transform);
         weapon.transform.localPosition = weaponInUse.gripTransform.localPosition;
         weapon.transform.localRotation = weaponInUse.gripTransform.localRotation;
     }
 
-    private void RegisterForMouseClick()
+    GameObject RequestDominantHand()
+    {
+        var dominantHands = GetComponentsInChildren<DominantHand>();
+        int numberOfDominantHands = dominantHands.Length;
+        Assert.AreNotEqual(numberOfDominantHands, 0, "No dominantHand found, please add one");
+        Assert.IsFalse(numberOfDominantHands > 1, "Multiple dominantHand Scripts on Player, please remove one");
+        return dominantHands[0].gameObject;
+    }
+
+    void RegisterForMouseClick()
     {
         cameraRaycaster = FindObjectOfType<CameraRaycaster>();
         cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
     }
 
+    // TODO Refactor to reduce lines
     void OnMouseClick(RaycastHit raycastHit, int layerHit)
     {
         if (layerHit == enemyLayer)
