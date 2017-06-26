@@ -552,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501013962498128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -102.25, y: 0, z: -216.84}
+  m_LocalPosition: {x: -102.07, y: 0, z: -219.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073002512383430}
@@ -701,6 +701,8 @@ MonoBehaviour:
   minTimeBetweenHits: 1
   weaponInUse: {fileID: 11400000, guid: 2450805f61a04f542b74e448f4f8e684, type: 2}
   maxAttackRange: 2
+  animOverrideController: {fileID: 22100000, guid: 313923c57b175e648be62de22b6f8502,
+    type: 2}
   currentHealthPoints: 0
 --- !u!114 &114793335721260212
 MonoBehaviour:

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using RPG.Core;
+using RPG.Weapons;
 
-public class Summoner : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] GameObject projectileToUse;
     [SerializeField] GameObject projectileSocket;
@@ -10,7 +12,7 @@ public class Summoner : MonoBehaviour, IDamageable
     [SerializeField] float damagePerShot = 9f;
     [SerializeField] float secondsBetweenShots;
 
-    [SerializeField] float summonRadius;
+    [SerializeField] float attackRadius;
     [SerializeField] float chaseRadius;
     [SerializeField] float stopChaseRadius;
     [SerializeField] Vector3 aimOffset = new Vector3(0, 1f, 0);
@@ -42,13 +44,13 @@ public class Summoner : MonoBehaviour, IDamageable
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distanceToPlayer <= summonRadius && !isAttacking)
+        if (distanceToPlayer <= attackRadius && !isAttacking)
         {
             isAttacking = true;
-            InvokeRepeating("SpawnProjectile", 0f, secondsBetweenShots);  // TODO Switch to Coroutines
+            InvokeRepeating("FireProjectile", 0f, secondsBetweenShots);  // TODO Switch to Coroutines
         }
 
-        if (distanceToPlayer > summonRadius && isAttacking)
+        if (distanceToPlayer > attackRadius && isAttacking)
         {
             isAttacking = false;
             CancelInvoke();
@@ -76,20 +78,24 @@ public class Summoner : MonoBehaviour, IDamageable
         }
     }
 
-    void SpawnProjectile()
+    // TODO Seperate out character firing logic
+    void FireProjectile()
     {
         GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity); // Spawns project at the projectile socket 
         Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
         projectileComponent.SetDamage(damagePerShot);
+        projectileComponent.SetShooter(gameObject);
 
         Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized; // shoots projectile in direction of the player from the projectileSocket
+        float projectileSpeed = projectileComponent.GetDefaultLaunchSpeed();
+        newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
     }
 
     private void OnDrawGizmos()
     {
         // Draw Move and Attack Gizmos
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, summonRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, chaseRadius);
         Gizmos.color = Color.black;

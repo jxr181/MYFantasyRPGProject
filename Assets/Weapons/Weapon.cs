@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = ("RPG/Weapon"))]
-public class Weapon : ScriptableObject
+namespace RPG.Weapons
 {
-    [SerializeField] GameObject weaponPrefab;
-    [SerializeField] AnimationClip attackAnim;
 
-    public Transform gripTransform;
-
-    public GameObject GetWeaponPrefab()
+    [CreateAssetMenu(menuName = ("RPG/Weapon"))]
+    public class Weapon : ScriptableObject
     {
-        return weaponPrefab;
+        [SerializeField] GameObject weaponPrefab;
+        [SerializeField] AnimationClip attackAnim;
+
+        public Transform gripTransform;
+
+        public GameObject GetWeaponPrefab()
+        {
+            return weaponPrefab;
+        }
+
+        public AnimationClip GetAttackAnimClip()
+        {
+            return attackAnim;
+        }
     }
-	
 }
