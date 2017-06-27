@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cbf5c603b2ca447a092809f0c1d84b, type: 3}
+  m_Name: WeakSword
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 100000, guid: dd0682cd55d7f8342b8026ebb1cfc4a5, type: 3}
+  attackAnim: {fileID: 7400000, guid: 01ce608905e9d3e48928ced7d03f19ed, type: 3}
+  gripTransform: {fileID: 4010814010891170, guid: 6685d10aafdfdcc4a8832c70b2a8c1ed,
+    type: 2}
